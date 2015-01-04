@@ -1,0 +1,32 @@
+{
+  "name": "gigawatt",
+  "version": "0.0.0",
+  "description": "Yet Another Flux Implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jador/gigawatt.git"
+  },
+  "keywords": [
+    "flux",
+    "react",
+    "bacon"
+  ],
+  "author": "Tyler Graham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jador/gigawatt/issues"
+  },
+  "homepage": "https://github.com/Jador/gigawatt",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jasmine": "^1.0.1",
+    "gulp-traceur": "^0.15.0"
+  },
+  "dependencies": {
+    "baconjs": "^0.7.41"
+  }
+}
