@@ -2,19 +2,19 @@
 var Bus = require('baconjs').Bus;
 function Action(name) {
   var bus = new Bus();
-  var functor = function() {
-    functor.emit.apply(functor, arguments);
+  var action = function() {
+    action.emit.apply(action, arguments);
   };
-  functor.getName = (function() {
+  action.getName = (function() {
     return name;
   });
-  functor.listen = (function() {
+  action.listen = (function() {
     return bus;
   });
-  functor.emit = (function(payload) {
+  action.emit = (function(payload) {
     return bus.push(payload);
   });
-  return functor;
+  return action;
 }
 var createAction = function(actionName) {
   var obj = {};
