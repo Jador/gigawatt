@@ -16,16 +16,14 @@ function Action(name) {
   });
   return action;
 }
-var createAction = function(actionName) {
-  var obj = {};
-  [].concat(actionName).forEach((function(action) {
-    return obj[action] = new Action(action);
-  }));
-  if (Object.keys(obj).length === 1) {
-    return obj[actionName];
-  } else {
-    return obj;
-  }
+exports.createAction = function(actionName) {
+  return new Action(actionName);
 };
-module.exports = createAction;
+exports.createActions = function(actionNames) {
+  var actions = {};
+  [].concat(actionNames).forEach((function(actionName) {
+    return actions[actionName] = new Action(actionName);
+  }));
+  return actions;
+};
 //# sourceURL=createAction.js

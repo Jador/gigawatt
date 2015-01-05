@@ -1,5 +1,8 @@
+var actionFactory = require('./build/createAction.js');
+
 var Gigawatt = {
-  createAction: require('./build/createAction.js'),
+  createAction: actionFactory.createAction,
+  createActions: actionFactory.createActions,
   createStore: require('./build/createStore.js')
 };
 

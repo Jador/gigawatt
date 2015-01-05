@@ -26,7 +26,7 @@ describe('createStore', function() {
   });
 
   it('should dispatch to all handle methods if actions is an array', function() {
-    var actions = Gigawatt.createAction(['alpha', 'omega', 'gamma']);
+    var actions = Gigawatt.createActions(['alpha', 'omega', 'gamma']);
 
     var definition = {
       actions: actions,
