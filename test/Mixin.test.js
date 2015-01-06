@@ -62,5 +62,17 @@ describe('Mixin', function() {
     expect(component.state).toBe('foo');
 
   });
+
+  it('should stop listening for changes when component unmounts', function() {
+    var component = ಠ_ಠ.extend(stub, Gigawatt.Mixin([{ store: store, props: ['prop1'] }]));
+    component.componentDidMount();
+    
+    foo('bar');
+    expect(component.state).toBe('bar');
+
+    component.componentWillUnmount();
+    foo('baz');
+    expect(component.state).toBe('bar');
+  });
   
 });
