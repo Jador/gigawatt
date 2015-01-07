@@ -2,7 +2,7 @@
 var ಠ_ಠ = require('./Util.js');
 var reserved = ['emit', 'listen', 'getName'];
 var createStore = function(definition) {
-  var clone = ಠ_ಠ.extend(definition);
+  var clone = ಠ_ಠ.extend({}, definition);
   clone.actions = pluckActions(clone);
   for (var key in clone.actions) {
     if (reserved.indexOf(key) > -1) {
@@ -25,9 +25,9 @@ function pluckActions(obj) {
   return actions;
 }
 function getHandlerName(action) {
-  return "handle" + captialize(action);
+  return "handle" + capitalize(action);
 }
-function captialize(string) {
+function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 module.exports = createStore;
